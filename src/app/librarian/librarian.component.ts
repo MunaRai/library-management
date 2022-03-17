@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-librarian',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LibrarianComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.route.queryParams.subscribe(params => {
+      // this.name = params['name'];
+    });
   }
 
 }
