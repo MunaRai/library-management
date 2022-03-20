@@ -8,12 +8,10 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class LibrarianComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor() { }
 
   ngOnInit(){
-    this.route.queryParams.subscribe(params => {
-      // this.name = params['name'];
-    });
+  
   }
 
 }
