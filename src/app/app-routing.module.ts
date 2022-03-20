@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';  
 import { LibrarianComponent } from './librarian/librarian.component';
 import { AddBookInventoryComponent } from './librarian/add-book-inventory/add-book-inventory.component';
 import { CheckInventoryComponent } from './librarian/check-inventory/check-inventory.component';
@@ -12,7 +12,11 @@ const routes: Routes = [
   {path: 'check-inventory-component', component: CheckInventoryComponent},
   {path: 'student-page-component', component: StudentPageComponent},
   {path: 'borrow-request-component', component: BorrowRequestComponent},
+
+  //redirect to Librarian component
   {path: '', redirectTo: '/librarian-component', pathMatch: 'full'},
+
+  // Setting up wildcard route for 404 page
   // {path: '**', component: PageNotFoundComponent },
 ];
 @NgModule({
@@ -20,3 +24,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+export const routingComponents = [AddBookInventoryComponent, CheckInventoryComponent, StudentPageComponent, BorrowRequestComponent]

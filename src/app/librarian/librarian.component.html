@@ -1,12 +1,90 @@
-<header>
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue;">Librarian Dashboard</h1>
+        <div class="d-flex">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" routerLink="/add-book-inventory" class="btn btn-success">Add Book</button>
+        </div>
+    </div>
+</nav>
+
+<!-- <header>
     <div class="lib-section">
         <h2>LIBRARIAN DASHBOARD</h2>
     
         <nav class="library-list">
-            <a routerLink="/add-book-inventory" routerLinkActive="active">Add Book Inventory</a>
+            <a routerLinkActive="active">Add Book Inventory</a>
             <a routerLink="/check-inventory" routerLinkActive="active">Check Inventory</a>
             <a routerLink="/student-page" routerLinkActive="active">Student Page</a>
             <a routerLink="/borrow-request" routerLinkActive="active">Borrow Request</a>
         </nav>
     </div>    
-</header>
+</header> -->
+
+<table class="table mt-3">
+    <thead>
+        <tr>
+            <th scope="col">Book Id</th>
+            <th scope="col">Book Name</th>
+            <th scope="col">Author Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Faculty</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>OOP</td>
+            <td>sajdfhs vajdf</td>
+            <td>1</td>
+            <td>IT</td>
+            <td>
+                <button class="btn btn-info">Edit</button>
+                <button class="btn btn-danger mx-3">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Book</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup] = "formValue">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Book Id</label>
+                  <input type="number" formControlName="bookId" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Book Id">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1">Book Name</label>
+                  <input type="text" formControlName="bookName" class="form-control" id="exampleInputPassword1" placeholder="Enter Book Name">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1">Author Name</label>
+                  <input type="text" formControlName="authorName" class="form-control" id="exampleInputPassword1" placeholder="Enter Author Name">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1">Quantity</label>
+                  <input type="text" formControlName="quantity" class="form-control" id="exampleInputPassword1" placeholder="Enter No. of Books">
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1">Faculty</label>
+                  <input type="text" formControlName="faculty" class="form-control" id="exampleInputPassword1" placeholder="Enter Faculty"    >
+                </div>
+               
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" (click)=" postLibrarianDetails()" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
