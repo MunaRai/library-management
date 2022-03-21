@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';  
-import { LibrarianComponent } from './librarian/librarian.component';
+import { LibrarianComponent } from './librarian/librarian.component'
 import { AddBookInventoryComponent } from './librarian/add-book-inventory/add-book-inventory.component';
 import { CheckInventoryComponent } from './librarian/check-inventory/check-inventory.component';
 import { StudentPageComponent } from './librarian/student-page/student-page.component';

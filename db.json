@@ -12,6 +12,62 @@
       "quantity": "asdf",
       "faculty": "asdf",
       "id": 2
+    },
+    {
+      "bookId": "",
+      "bookName": "",
+      "authorName": "",
+      "quantity": "",
+      "faculty": "",
+      "id": 3
+    },
+    {
+      "bookId": "",
+      "bookName": "",
+      "authorName": "",
+      "quantity": "",
+      "faculty": "",
+      "id": 4
+    },
+    {
+      "bookId": 1,
+      "bookName": "dsfs",
+      "authorName": "sdfsdf",
+      "quantity": "sdfsadf",
+      "faculty": "sdfsd",
+      "id": 5
+    },
+    {
+      "bookId": 4,
+      "bookName": "wre",
+      "authorName": "wqer",
+      "quantity": "3",
+      "faculty": "fdsafs",
+      "id": 6
+    },
+    {
+      "bookId": 345,
+      "bookName": "twert",
+      "authorName": "ewtwe",
+      "quantity": "2",
+      "faculty": "asdff",
+      "id": 7
+    },
+    {
+      "bookId": 19,
+      "bookName": "System Development Lifecycle Model",
+      "authorName": "husdfas jfs",
+      "quantity": "15",
+      "faculty": "BSc.CSIT",
+      "id": 8
+    },
+    {
+      "bookId": "",
+      "bookName": "OS",
+      "authorName": "Raju Gautam",
+      "quantity": "20",
+      "faculty": "BSc.CSIT",
+      "id": 9
     }
   ],
   "comments": [
