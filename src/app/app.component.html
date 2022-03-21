@@ -1,2 +1,15 @@
 
+<nav class="navbar navbar-light bg-primary">
+    <div class="container-fluid">
+        <h1 style="color: aliceblue;">Librarian Dashboard</h1>
+        <div class="d-flex">
+            <a routerLink="" >Home</a>
+            <a data-bs-toggle="modal" data-bs-target="#addBook" routerLink="/add-book-inventory" >Add Book</a>
+            <a data-bs-toggle="modal" data-bs-target="#checkInventory" routerLink="/check-inventory">Check Inventory</a>
+            <a data-bs-toggle="modal" data-bs-target="#studentPage" routerLink="//student-page" >Student Page</a>
+            <a data-bs-toggle="modal" data-bs-target="#borrowRequest" routerLink="/borrow-request" >Borrow Request</a>
+        </div>
+    </div>
+</nav>
+
 <router-outlet></router-outlet>

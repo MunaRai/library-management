@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { LibrarianModel } from './librarian.model';
-import { error } from 'console';
+import { ApiService } from '../shared/api.service';
 
 @Component({
   selector: 'app-librarian',
@@ -14,8 +14,11 @@ export class LibrarianComponent implements OnInit {
   formValue !: FormGroup;
   //creating object to parse this object to the server for posting our data
   librarianModelObj : LibrarianModel = new LibrarianModel();
-  api: any;
-  constructor(private formbuilder: FormBuilder) { }
+  
+  constructor(
+    private formbuilder: FormBuilder,
+    private readonly api: ApiService
+  ) { }
 
   ngOnInit(){
    this.formValue = this.formbuilder.group({
@@ -35,12 +38,13 @@ export class LibrarianComponent implements OnInit {
     this.librarianModelObj.quantity = this.formValue.value.quantity;
     this.librarianModelObj.faculty = this.formValue.value.faculty;
 
-    this.api.postLibrarian(this.librarianModelObj)
-    .subscribe((res: any)=>{
+    this.api.postLibrarian( this.librarianModelObj )
+    .subscribe( (res:any) =>{
       console.log(res);
-      alert("Book Added Successfully");
+      alert("Book Added Successfully")
+      this.formValue.reset();
     },
-      (err: any)=>{
+      (err:any) =>{
       alert("Error Occured");
     })
   }

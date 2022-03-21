@@ -4,6 +4,14 @@
       "id": 1,
       "title": "json-server",
       "author": "typicode"
+    },
+    {
+      "bookId": 12,
+      "bookName": "sadf",
+      "authorName": "asdf",
+      "quantity": "asdf",
+      "faculty": "asdf",
+      "id": 2
     }
   ],
   "comments": [

@@ -10,7 +10,8 @@ import { BorrowRequestComponent } from './librarian/borrow-request/borrow-reques
 import { StudentPageComponent } from './librarian/student-page/student-page.component';
 import { CheckInventoryComponent } from './librarian/check-inventory/check-inventory.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './shared/api.service';
 
 @NgModule({
   declarations: [
@@ -26,10 +27,11 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClient,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

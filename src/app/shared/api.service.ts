@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import {Librarian} from '../librarian/model/librarian.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -9,29 +9,19 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  postLibrarian(data : any){
-    return this.http.post<any>("http://localhost:3000/posts", data)
-    .pipe(map((res: any)=>{
-      return res;
-    }))
+  public postLibrarian(data : Librarian){
+    return this.http.post<any>("http://localhost:3000/posts", data);
   }
-  getLibrarian(){
-    return this.http.get<any>("http://localhost:3000/posts")
-    .pipe(map((res: any)=>{
-      return res;
-    }))
+  public getLibrarian(){
+    return this.http.get<any>("http://localhost:3000/posts");
   }
-  updateLibrarian(data :any, id: number){
-    return this.http.put<any>("http://localhost:3000/posts"+id, data)
-    .pipe(map((res: any)=>{
-      return res;
-    }))
+  public updateLibrarian(data :Librarian, id: number){
+    return this.http.put<any>("http://localhost:3000/posts"+id, data);
+  
   }
-  deleteLibrarian(id : number){
-    return this.http.delete<any>("http://localhost:3000/posts"+id)
-    .pipe(map((res: any)=>{
-      return res;
-    }))
+  public deleteLibrarian(id : number){
+    return this.http.delete<any>("http://localhost:3000/posts"+id);
+    
   }
 
 }
