@@ -1,0 +1,16 @@
+.container-fluid {
+    h2{
+        text-align: center;
+    }
+    .form-inline{
+        margin: 0 auto;
+        display: inline-block;
+
+        .form-control{
+            margin: 2rem 0;
+        }
+        button{
+            text-align: center;
+        }
+    }
+}
