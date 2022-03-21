@@ -20,7 +20,8 @@ import { ApiService } from './shared/api.service';
     AddBookInventoryComponent,
     BorrowRequestComponent,
     StudentPageComponent,
-    CheckInventoryComponent
+    CheckInventoryComponent,
+    
   ],
   imports: [
     BrowserModule,

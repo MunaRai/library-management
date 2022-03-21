@@ -7,14 +7,13 @@ import { StudentPageComponent } from './librarian/student-page/student-page.comp
 import { BorrowRequestComponent } from './librarian/borrow-request/borrow-request.component';
 
 const routes: Routes = [
-  {path: 'librarian', component: LibrarianComponent},
   {path: 'add-book-inventory', component: AddBookInventoryComponent},
   {path: 'check-inventory', component: CheckInventoryComponent},
   {path: 'student-page', component: StudentPageComponent},
   {path: 'borrow-request', component: BorrowRequestComponent},
 
   //redirect to Librarian component
-  {path: '', redirectTo: '/librarian', pathMatch: 'full'},
+  {path: '', redirectTo: '/add-book-inventory', pathMatch: 'full'},
 
   // Setting up wildcard route for 404 page
   // {path: '**', component: PageNotFoundComponent },

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AddBookInventoryComponent } from './librarian/add-book-inventory/add-book-inventory.component';
 
 @Component({
   selector: 'app-root',

@@ -16,10 +16,10 @@ export class ApiService {
     return this.http.get<any>("http://localhost:3000/posts");
   }
   public updateLibrarian(data :Librarian, id: number){
-    return this.http.put<any>("http://localhost:3000/posts"+id, data);
+    return this.http.put<any>(`http://localhost:3000/posts/${id}`, data);
   }
   public deleteLibrarian(id : number){
-    return this.http.delete<any>("http://localhost:3000/posts"+id);  
+    return this.http.delete<any>(`http://localhost:3000/posts/${id}`);  //Template literals
   }
 
 }

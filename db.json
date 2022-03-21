@@ -1,45 +1,8 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    },
-    {
-      "bookId": 12,
-      "bookName": "sadf",
-      "authorName": "asdf",
-      "quantity": "asdf",
-      "faculty": "asdf",
-      "id": 2
-    },
-    {
-      "bookId": "",
-      "bookName": "",
-      "authorName": "",
-      "quantity": "",
-      "faculty": "",
-      "id": 3
-    },
-    {
-      "bookId": "",
-      "bookName": "",
-      "authorName": "",
-      "quantity": "",
-      "faculty": "",
-      "id": 4
-    },
-    {
-      "bookId": 1,
-      "bookName": "dsfs",
-      "authorName": "sdfsdf",
-      "quantity": "sdfsadf",
-      "faculty": "sdfsd",
-      "id": 5
-    },
-    {
-      "bookId": 4,
-      "bookName": "wre",
+      "bookId": 6,
+      "bookName": "Technical Writing",
       "authorName": "wqer",
       "quantity": "3",
       "faculty": "fdsafs",
@@ -78,13 +41,7 @@
       "id": 10
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }

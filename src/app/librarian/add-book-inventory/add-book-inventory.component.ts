@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { LibrarianModel } from '../librarian.model';
 import { ApiService } from 'src/app/shared/api.service';
+import {Librarian} from '../model/librarian.interface';
 
 @Component({
   selector: 'app-add-book-inventory',
@@ -12,7 +13,7 @@ export class AddBookInventoryComponent implements OnInit {
 
   formValue !: FormGroup;
   //creating object to parse this object to the server for posting our data
-  librarianModelObj : LibrarianModel = new LibrarianModel();
+  librarianModelObj : Librarian = new LibrarianModel();
   librarianData !: any;
   showAdd !: boolean;
   showUpdate !: boolean;
@@ -70,7 +71,7 @@ export class AddBookInventoryComponent implements OnInit {
 
   //To delete the data on the table
   deleteBook(row : any){
-    this.api.deleteLibrarian(row.id).subscribe((res:any) =>{
+    this.api.deleteLibrarian(row.id).subscribe(res =>{
       console.log(res); 
       alert("Book Deleted");
       this.getAllBook();
