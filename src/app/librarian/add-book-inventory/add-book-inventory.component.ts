@@ -14,6 +14,8 @@ export class AddBookInventoryComponent implements OnInit {
   //creating object to parse this object to the server for posting our data
   librarianModelObj : LibrarianModel = new LibrarianModel();
   librarianData !: any;
+  showAdd !: boolean;
+  showUpdate !: boolean;
   
   constructor(
     private formbuilder: FormBuilder,
@@ -28,14 +30,17 @@ export class AddBookInventoryComponent implements OnInit {
      quantity: [''],
      faculty: ['']
    })
-
    this.getAllBook();
   }
 
-  //Making use of obj "librarianModelObj" to post our data
+  clickAddBook(){
+    this.formValue.reset();
+    this.showAdd = true;
+    this.showUpdate = false;
+  }
 
+  //Making use of obj "librarianModelObj" to post our data
   postLibrarianDetails(){
-    this.librarianModelObj.bookId = this.formValue.value.bookId;
     this.librarianModelObj.bookName = this.formValue.value.bookName;
     this.librarianModelObj.authorName = this.formValue.value.authorName;
     this.librarianModelObj.quantity = this.formValue.value.quantity;
@@ -66,9 +71,37 @@ export class AddBookInventoryComponent implements OnInit {
   //To delete the data on the table
   deleteBook(row : any){
     this.api.deleteLibrarian(row.id).subscribe((res:any) =>{
+      console.log(res); 
       alert("Book Deleted");
       this.getAllBook();
     })
   }
+
+  //To edit the book details on the table
+  onEdit(row: any){
+    this.showAdd = false;
+    this.showUpdate = true;
+    this.librarianModelObj.bookId = row.id;
+    this.formValue.controls['bookName'].setValue(row.bookName);
+    this.formValue.controls['authorName'].setValue(row.authorName);
+    this.formValue.controls['quantity'].setValue(row.quantity);
+    this.formValue.controls['faculty'].setValue(row.faculty);
+  }
+  updateLibrarianDetails(){
+    this.librarianModelObj.bookName = this.formValue.value.bookName;
+    this.librarianModelObj.authorName = this.formValue.value.authorName;
+    this.librarianModelObj.quantity = this.formValue.value.quantity;
+    this.librarianModelObj.faculty = this.formValue.value.faculty;
+
+    this.api.updateLibrarian(this.librarianModelObj, this.librarianModelObj.bookId)
+    .subscribe(res=>{
+      alert("Updated Successfully");
+      let ref = document.getElementById('cancel')
+      ref?.click();
+      this.formValue.reset();
+      this.getAllBook();
+    })
+  }
+
 
 }

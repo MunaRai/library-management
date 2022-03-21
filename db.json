@@ -68,6 +68,14 @@
       "quantity": "20",
       "faculty": "BSc.CSIT",
       "id": 9
+    },
+    {
+      "bookId": 0,
+      "bookName": "Accounting",
+      "authorName": "sadf sdfj",
+      "quantity": "2",
+      "faculty": "BBA",
+      "id": 10
     }
   ],
   "comments": [
