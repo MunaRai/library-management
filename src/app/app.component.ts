@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { AddBookInventoryComponent } from './librarian/add-book-inventory/add-book-inventory.component';
-
+import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,4 +7,13 @@ import { AddBookInventoryComponent } from './librarian/add-book-inventory/add-bo
 })
 export class AppComponent {
   title = 'library-management';
+
+  constructor(private translate: TranslateService){
+    translate.setDefaultLang('english');
+    translate.use('french');
+  }
+
+  changeLocale(locale: string){
+    this.translate.use(locale);
+  }
 }

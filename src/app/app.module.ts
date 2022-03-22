@@ -9,10 +9,17 @@ import { AddBookInventoryComponent } from './librarian/add-book-inventory/add-bo
 import { BorrowRequestComponent } from './librarian/borrow-request/borrow-request.component';
 import { StudentPageComponent } from './librarian/student-page/student-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ApiService } from './shared/api.service';
 import { BookSearchComponent } from './librarian/book-search/book-search.component';
 
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+// for Internationalization
+export function HttpLoaderFactory(http: HttpClient){
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
 @NgModule({
   declarations: [
     AppComponent, 
@@ -28,7 +35,14 @@ import { BookSearchComponent } from './librarian/book-search/book-search.compone
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
   providers: [
     ApiService

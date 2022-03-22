@@ -2,18 +2,18 @@
   "posts": [
     {
       "bookId": 6,
-      "bookName": "Technical Writing",
+      "bookName": "ewtrwert",
       "authorName": "wqer",
       "quantity": "3",
       "faculty": "fdsafs",
       "id": 6
     },
     {
-      "bookId": 345,
-      "bookName": "twert",
+      "bookId": 7,
+      "bookName": "C programming",
       "authorName": "ewtwe",
       "quantity": "2",
-      "faculty": "asdff",
+      "faculty": "BIT",
       "id": 7
     },
     {
@@ -39,6 +39,14 @@
       "quantity": "2",
       "faculty": "BBA",
       "id": 10
+    },
+    {
+      "bookId": 0,
+      "bookName": "OOP ",
+      "authorName": "kdsjfsk ",
+      "quantity": "2",
+      "faculty": "IT",
+      "id": 11
     }
   ],
   "comments": [],
