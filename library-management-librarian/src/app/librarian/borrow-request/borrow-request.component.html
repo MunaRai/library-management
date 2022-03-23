@@ -1,0 +1,24 @@
+<div  *ngIf="noBorrow==false;">
+    <table class="table ">
+        <thead>
+        <tr>
+        <th>Student</th>
+        <th>Book</th>
+        <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr  *ngFor="let x of borrowListFromLocalStorage;let i=index">
+            <td>{{x[0]}}</td>
+            <td>{{x[1]}}</td>
+            <td>
+                <button class="btn btn-outline-success" (click)="checkOut(i)">ReturnBook</button>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+
+<div *ngIf="noBorrow==true" style="text-align:center;">
+    All Books are returned...!!!
+</div>
