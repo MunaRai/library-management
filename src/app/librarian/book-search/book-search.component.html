@@ -4,9 +4,36 @@
 
     <nav class="navbar navbar-light">
       <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+          <input class="form-control mr-sm-2" #searchData type="search" placeholder="Search" aria-label="Search" [value]="123">
+          <button class="btn btn-primary my-2 my-sm-0" type="submit" (click)="searching(searchData.value)" >Search</button>
         </form>
       </nav>
       
+</div>
+<div>
+  <table *ngIf="bookPresent; else notFound" class="table mt-3">
+    <thead>
+      <tr>
+        <th scope="col">Book Id</th>
+        <th scope="col">Book Name</th>
+        <th scope="col">Author Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Faculty</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let row of listOfParticularBook">
+        <td>{{ row.id }}</td>
+        <td>{{ row.bookName }}</td>
+        <td>{{ row.authorName }}</td>
+        <td>{{ row.quantity }}</td>
+        <td>{{ row.faculty }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #notFound>
+    <p class="text-danger mt-2" style="text-align: center;">Book Not Found!!</p>
+  </ng-template>
+  
 </div>

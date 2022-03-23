@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-borrow-request',
@@ -7,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BorrowRequestComponent implements OnInit {
 
-  constructor() { }
+  constructor(private formbuilder: FormBuilder) { }
 
   ngOnInit(): void {
   }

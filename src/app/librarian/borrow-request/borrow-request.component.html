@@ -1,1 +1,34 @@
-<p>borrow-request works!</p>
+<!-- Modal for Borrow Request -->
+<div class="modal fade" id="addBook" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Book</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1">Student Name</label>
+                        <input type="text" formControlName="bookName" class="form-control" id="exampleInputPassword1"
+                            placeholder="Enter Book Name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1">Isbn</label>
+                        <input type="text" formControlName="authorName" class="form-control" id="exampleInputPassword1"
+                            placeholder="Enter Author Name">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="cancel" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- *ngIf="showAdd" (click)="postLibrarianDetails()"
+*ngIf="showUpdate" (click)="updateLibrarianDetails()" -->
