@@ -23,7 +23,7 @@
 <div>
  
   <!-- <table *ngIf="bookPresent; else notFound" class="table mt-3"> -->
-  <table *ngIf="bookPresent" class="table mt-3">
+  <table *ngIf="bookPresent;" class="table mt-3">
     <thead>
       <tr>
         <th scope="col">Book Id</th>
@@ -46,9 +46,10 @@
       </tr>
     </tbody>
   </table>
-  <p *ngIf="bookPresent==false && clicked" class="text-danger mt-2" style="text-align: center;">Book Not Found!!</p>
-  <!-- <ng-template #notFound *ngIf="clicked==true">
+  <!-- <p *ngIf="bookPresent==false && clicked" class="text-danger mt-2" style="text-align: center;">Book Not Found!!</p> -->
+  
+  <ng-template #notFound *ngIf="clicked==true">
     <p class="text-danger mt-2" style="text-align: center;">Book Not Found!!</p>
-  </ng-template> -->
+  </ng-template>
 
 </div>

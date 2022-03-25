@@ -9,14 +9,16 @@ import { FormBuilder } from '@angular/forms';
 })
 export class BorrowRequestComponent implements OnInit {
   borrowListFromLocalStorage:any=[];
-  allBooksReturn:string = "";
-  noBorrow:boolean=true;
+  allBooksReturn:string = "All Books are returned...!!!";
+  noBorrow:any=null;
   constructor(private formbuilder: FormBuilder) { }
 
   ngOnInit(): void {
     const tokenFromLocalStorage = localStorage.getItem("Borrow"); 
+    
   if(tokenFromLocalStorage)
   {
+    
     this.noBorrow=false; 
     this.borrowListFromLocalStorage=JSON.parse(tokenFromLocalStorage);
     // console.log(this.borrowListFromLocalStorage[0][1]);
@@ -29,14 +31,16 @@ export class BorrowRequestComponent implements OnInit {
 
   ////////////////////////////////////////////////////////
   checkOut(i:number){
-    // console.log("enters here");
+    // console.log("enters here...");
     this.borrowListFromLocalStorage.splice(i,1);
-   
+  
     localStorage.setItem("Borrow",JSON.stringify(this.borrowListFromLocalStorage));
-    if(this.borrowListFromLocalStorage=[])
+    if(this.borrowListFromLocalStorage.length==0)
     {
       localStorage.removeItem('Borrow');
-    } 
+      window.location.reload();
+    }
+    
     // console.log(this.borrowListFromLocalStorage);
   }
 
